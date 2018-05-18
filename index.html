@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>reveal.js</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>ES6新语法</h1>
+				<p>谷中仁</p>
+			</section>
+			<section>
+				<section>
+					<p class="fragment visible grow current-fragment highlight-current-blue" data-fragment-index="0">动态</p>
+					<p class="fragment visible" data-fragment-index="1">在运行时确定数据类型。变量使用之前不需要类型声明，通常变量的类型是被赋值的那个值的类型。</p>
+					<p class="fragment visible  grow highlight-current-blue" data-fragment-index="2">弱类型</p>
+					<p class="fragment visible" data-fragment-index="3">计算时可以不同类型之间对使用者透明地隐式转换，即使类型不正确，也能通过隐式转换来得到正确的类型。</p>
+					<p class="fragment visible  grow highlight-current-blue" data-fragment-index="4">原型</p>
+					<p class="fragment visible" data-fragment-index="5">新对象继承对象（作为模版），将自身的属性共享给新对象，模版对象称为原型。这样新对象实例化后不但可以享有自己创建时和运行时定义的属性，而且可以享有原型对象的属性。</p>
+				</section>
+				<section>
+					<p data-fragment-index="6">PS：新对象指函数，模版对象是实例对象，实例对象是不能继承原型的，函数才可以的。</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>JavaScript由三部分组成</h2>
+					<ol>
+						<li>ECMAScript（核心）</li>
+						<li>DOM（文档对象模型）</li>
+						<li>BOM （浏览器对象模型）</li>
+					</ol>
+				</section>
+				<section data-markdown>
+					### ECMAScript（核心） ![ECMAScript（核心）](./img/ecmascript.png)
+				</section>
+				<section data-markdown>
+					### DOM（文档对象模型） ![ECMAScript（核心）](./img/dom.png)
+				</section>
+				<section data-markdown>
+					### BOM（浏览器对象模型） 支持可以访问和操作浏览器窗口的浏览器对象模型，开发人员可以控制浏览器显示的页面以外的部分。 
+					> PS：PWA的 [Notifacation](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2><a href="#">ES6 新特性</a></h2>
+				</section>
+				<section>
+					<p >1.块级作用域 关键字let, 常量const</p>
+					<script async src="//jsfiddle.net/guzhongren/ox5by3xv/3/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>2.对象字面量的属性赋值简写（property value shorthand）</p>
+					<script async src="//jsfiddle.net/guzhongren/s1wnn3vd/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>3.赋值解构</p>
+					<script async src="//jsfiddle.net/guzhongren/hm0ohcba/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>4.函数参数 - 默认值、参数打包、 数组展开（Default 、Rest 、Spread）</p>
+					<script async src="//jsfiddle.net/guzhongren/8bpapmnv/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>5.箭头函数 Arrow functions</p>
+					<ol>
+						<li>简化了代码形式，默认return表达式结果。</li>
+						<li>自动绑定语义this，即定义函数时的this。如上面例子中，forEach的匿名函数参数中用到的this。</li>
+					</ol>
+					<script async src="//jsfiddle.net/guzhongren/1dkvqwL5/5/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>6.字符串模板 Template strings</p>
+					<script async src="//jsfiddle.net/guzhongren/ax63x2br/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>7.Iterators（迭代器）+ for..of</p>
+					<script async src="//jsfiddle.net/guzhongren/6cu4rb3z/embed/js,result/"></script>
+					<p>String，Array，TypedArray，Map和Set都是内置迭代器，因为它们的原型中都有一个Symbol.iterator方法。</p>
+				</section>
+				<section>
+					<p>8.Generator函数</p>
+					<script async src="//jsfiddle.net/guzhongren/xw9yc191/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>9.Class</p>
+					<script async src="//jsfiddle.net/guzhongren/942310t1/embed/js,result/"></script>
+					<p class="shrink">Class有constructor、extends、super，但本质上是语法糖（对语言的功能并没有影响，但是更方便程序员使用）。</p>
+				</section>
+				<section>
+					<p>10.Modules</p>
+					<iframe src="https://stackblitz.com/edit/10modules?embed=1&file=index.js&hideNavigation=1"></iframe>
+				</section>
+				<section>
+					<p>11.Set,Map,WeakMap,WeakSet</p>
+					<p>WeakMap、WeakSet作为属性键的对象如果没有别的变量在引用它们，则会	被回收释放掉。</p>
+					<script async src="//jsfiddle.net/guzhongren/w6ck9uwx/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>12.Symbols</p>
+					<p>新增的一种基本类型。Symbol 通过调用Symbol函数产生，它接收一个可选的名字参数，该函数返回的symbol是唯一的。</p>
+					<script async src="//jsfiddle.net/guzhongren/8rumkufy/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>13.Promise</p>
+					<p>处理异步操作的对象，使用了 Promise 对象之后可以用一种链式调用的方式来组织代码，让代码更加直观（类似jQuery的deferred 对象）。</p>
+					<script async src="//jsfiddle.net/guzhongren/323ado77/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>14.Proxy</p>
+					<p>使用代理（Proxy）监听对象的操作，然后可以做一些相应事情。</p>
+					<script async src="//jsfiddle.net/guzhongren/kopatkf1/embed/js,result/"></script>
+				</section>
+				<section>
+					<p>14.Proxy</p>
+					<p >可监听的操作： get、set、has、deleteProperty、apply、construct、getOwnPropertyDescriptor、defineProperty、getPrototypeOf、setPrototypeOf、enumerate、ownKeys、preventExtensions、isExtensible。</p>
+					<P>具体参数请参考<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler">MDN</a></P>
+				</section>
+			</section>
+			<section>
+				<h1>Thanks</h1>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			slideNumber: true,
+			center: true,
+			touch: true,
+			showNotes: false,
+			mouseWheel: false,
+			hideAddressBar: true,
+			dependencies: [
+				{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
